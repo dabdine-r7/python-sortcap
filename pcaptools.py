@@ -185,7 +185,8 @@ class SortCap(object):
         return self
 
     def close(self):
-        self.fd.close()
+        if self.fd:
+            self.fd.close()
         self.fd = None
 
     def next(self):
